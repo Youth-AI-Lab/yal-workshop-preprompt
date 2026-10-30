@@ -80,8 +80,9 @@ tools you know.
 ### How this connects to WikiYouthBot
 
 In the WikiYouthBot activity, the chatbot is built in a tool with two boxes: *Instructions*
-and *Knowledge*. You can already do it today with Open WebUI, a chat tool that your
-organisation runs for a group: see the [Open WebUI guide](https://github.com/Youth-AI-Lab/yal-openwebui-guide).
+and *Knowledge*. You can already do it today with Open WebUI, a chat tool that you start
+yourself: today in your Codespace, for you only (Part 5), and later for a group, by following
+the [Open WebUI guide](https://github.com/Youth-AI-Lab/yal-openwebui-guide).
 This workshop is about the first box.
 
 - **The five personalities** (Part 3) are "I Heard a Rumor" seen from inside the chatbot: how a
@@ -129,7 +130,7 @@ WebUI, which you use at the end and which takes a few minutes to start.
 You work in a GitHub Codespace: VS Code in your browser, on a computer of GitHub, with
 everything already installed. Each pair needs one free GitHub account. The facilitator gives each
 pair an API key: a long password that lets your Codespace use the model (Claude Sonnet, the
-same for every pair). Each key has a spending limit.
+same for every pair). The facilitator caps what the keys can spend.
 
 > ℹ️ **Note.** **Each workshop of the series starts in a new Codespace**, from its own repository.
 > Your work travels in a `.zip` file that you download at the end (Part 5) and bring to the next
@@ -157,6 +158,8 @@ Key OK (Claude Code, Anthropic, model claude-sonnet-5-5). You can start: worksho
 > differences are explained in the
 > [OpenCode guide, Part 2](https://github.com/Youth-AI-Lab/yal-opencode-guide#part-2---what-opencode-does-compared-with-claude-code).
 > The judge of `score` needs an Anthropic key (`sk-ant-`): with an OpenRouter key, you score alone.
+> Open WebUI (Step 3 and Part 5) needs an Anthropic key too: with an OpenRouter key, skip it, and
+> watch the screen of the facilitator at the closing.
 
 > ℹ️ **No Codespace?** The same repository opens on your own computer, with Docker and VS Code: see
 > the [dev containers guide](https://github.com/Youth-AI-Lab/yal-devcontainer-guide).
@@ -224,7 +227,8 @@ point: every later column is compared with it.
   know"**.
 - **`replay`**: the command that asks each question in a new conversation, so that nothing
   carries over from one question to the next.
-- **The gauge**: how many tokens the model read for one answer.
+- **The gauge**: how many tokens the model read for one answer. A **token** is the unit used to
+  measure text for a model: a piece of a word, on average 4 characters of English text.
 
 ### What the model alone reads
 
@@ -364,7 +368,8 @@ get a 2. Today, no mode has your page: "I don't know" is the honest answer.
 1. Read the section **Question 12: your territory** of `test-questions.md`.
 2. Find one official page of your territory (a prefecture, a region, a civil protection
    service, a park), and one precise fact in it that the kit does not give: a date, a number, a
-   rule.
+   rule. The **kit** is the set of documents, questions and commands that the five workshops of
+   the series share; the section of `test-questions.md` links to the list of its summaries.
 3. Click `test-questions.md` in the file list: the page becomes text again (you cannot type in
    the page). Write
    the question and its expected answer, with the address of the page, in row 12. You may write
@@ -379,7 +384,7 @@ get a 2. Today, no mode has your page: "I don't know" is the honest answer.
 
 > ℹ️ **Note.** Only 5 minutes are planned for question 12. If you have not finished, write it at
 > the start of workshop 2, just after `workshop-start 2 --from my-work.zip`. Then type
-> `replay bare 12` and `replay A 12`, and score both answers in `scores.md`.
+> `replay bare 12` and `replay A 12`, and score both answers with `score bare 12` and `score A 12`.
 
 > 💡 **Tip.** **Checkpoint**: column Bare is scored, with its total, and row 12 of
 > `test-questions.md` has a question, an expected answer and a source.
@@ -529,7 +534,9 @@ prints them (for example `4 out of 22`), the number of disagreements (the line `
 summary), and the trick in one sentence.
 
 > ℹ️ **Note.** Question 12 is different for each pair. Compare two totals only when they are out of
-> the same number.
+> the same number. To compare a total out of 24 with one out of 22, take off the scores of
+> question 12, yours and the judge's: they are in row 12 of `scores-personas.md`. Do not delete
+> anything in your files.
 
 #### Step 5 - Compare in the room
 
@@ -751,7 +758,7 @@ Answer on the card of the facilitator, alone, in a few words:
 - **Build a chatbot for a group** with your instructions: the
   [Open WebUI guide](https://github.com/Youth-AI-Lab/yal-openwebui-guide).
 
-**Next:** [Workshop 2 - When knowledge overflows: everything in the context, then RAG](https://github.com/Youth-AI-Lab/yal-workshop-rag). Open its own Codespace from that page, and
+**Next:** [Workshop 2 - Everything in the context, then RAG](https://github.com/Youth-AI-Lab/yal-workshop-rag). Open its own Codespace from that page, and
 bring `my-work.zip`.
 
 ---

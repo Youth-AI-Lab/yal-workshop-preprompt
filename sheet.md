@@ -30,7 +30,7 @@ Full page: [README.md](README.md). Setup and common problems: [SETUP.md](SETUP.m
 5. Score each answer **by hand** in column **Bare** of `scores.md`. Save (`Ctrl+S`).
 6. Row 12 of `test-questions.md`: click the file in the file list to write in it (you cannot type
    in the `Ctrl+Shift+V` page). One question about **your territory**, its answer, its source. Save.
-   Then `replay bare 12`, and score it.
+   Then `replay bare 12`, and score it. Not finished? At the start of workshop 2.
 
 ## 3. Five personalities (35 min)
 
@@ -57,7 +57,7 @@ Full page: [README.md](README.md). Setup and common problems: [SETUP.md](SETUP.m
    (its name + `chatbot`) in the message box, bottom right. Ask `Who are you?`, then questions 7
    and 1. Same behaviour as in mode A?
 2. `workshop-save` → right-click on `my-work.zip` → **Download...**. Bring it to [workshop 2](https://github.com/Youth-AI-Lab/yal-workshop-rag).
-3. Exit card: three answers, alone.
+3. Exit card: three answers, alone (the questions: README, Part 5, Step 3).
 
 **Leave a conversation:** `Ctrl+C` twice. **Copy / paste in the terminal:** `Ctrl+Shift+C` /
 `Ctrl+Shift+V` (`Cmd+C` / `Cmd+V` on a Mac). **Never make port 3000 public.**
