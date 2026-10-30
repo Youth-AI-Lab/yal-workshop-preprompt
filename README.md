@@ -254,7 +254,10 @@ So the same "I don't know" can be worth **2** (question 7: the answer exists now
 
 1. Open `test-questions.md` in the file list, then press `Ctrl+Shift+V` (`Cmd+Shift+V` on a Mac)
    to read it as a page. You find the scoring rules, then a table: one row per question, with its
-   category, the question, and the expected answer with its source.
+   category, the question, and the expected answer with its source. The page replaces the text in
+   the same tab; to write in the file again, click it in the file list.
+
+   ![The file test-questions.md read as a page. 1: the label Markdown Preview, at the top right. 2: the button Reopen as source file, which also brings the text back.](images/preview-in-place.png)
 2. Open `scores.md`. It has one short line per question and one empty column per mode: `Bare`,
    `A`, `B`, `C`, `D`, `E`. Today you fill **Bare** and **A**. The last row is the total: out of
    24 with question 12, out of 22 while row 12 is empty.
@@ -357,7 +360,8 @@ get a 2. Today, no mode has your page: "I don't know" is the honest answer.
 2. Find one official page of your territory (a prefecture, a region, a civil protection
    service, a park), and one precise fact in it that the kit does not give: a date, a number, a
    rule.
-3. Go back to the tab `test-questions.md`, not its preview: you cannot type in a preview. Write
+3. Click `test-questions.md` in the file list: the page becomes text again (you cannot type in
+   the page). Write
    the question and its expected answer, with the address of the page, in row 12. You may write
    it in your own language. Save (`Ctrl+S`).
 4. Replay this question only, with the model alone:
@@ -693,6 +697,8 @@ In Open WebUI, your `AGENTS.md` becomes the instructions of a chatbot.
    **Instructions** shows that your `AGENTS.md` went in.
 2. Open the address (`Ctrl` + click). Choose your chatbot in the message box, at the bottom
    right, and ask: `Who are you?`
+
+   ![Open WebUI, New Chat. 1: the button at the bottom right of the message box, which shows the model in use. 2: your chatbot in the list that opens.](images/chatbot-picker.png)
 3. Ask question 7, then question 1. Compare with your answers in mode A.
    - `How many hectares burnt in Campania in 2025?` (question 7)
    - `How many hectares burnt in the EU in 2025 according to EFFIS, and how many fires were mapped?` (question 1)
@@ -717,7 +723,9 @@ the pieces it reads, is the topic of workshops 2 and 3.
 
    You should see `Saved … files in my-work.zip:`, then the list of your files: your `AGENTS.md`,
    your question 12, your scores and your answers.
-2. **Download it**: right-click on `my-work.zip` in the file list, then **"Download"**.
+2. **Download it**: right-click on `my-work.zip` in the file list, then **Download...**.
+
+   ![1: my-work.zip in the file list. 2: the item Download... of the menu that opens with a right-click.](images/download-zip.png)
 3. Bring it to workshop 2. In its new Codespace, you drag it into the file list, then type
    `workshop-start 2 --from my-work.zip`: your work is back.
 
