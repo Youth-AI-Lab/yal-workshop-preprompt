@@ -318,7 +318,8 @@ While the replay runs, open a conversation with the same model, to see it answer
 
 2. Then ask: `Where does this figure come from? Give me your source.` Does it give a document, a
    link, or nothing? Does it say that it cannot check?
-3. **Look at the gauge**: about 2,300 tokens, as we measured. Most of them are the general
+3. **Look at the gauge**: we measured about 1,600 tokens after question 1, and about 2,200 after
+   the question about the source. Most of them are the general
    instructions of the tool: your question is only a few words. The model alone has no document
    to read: it answers from what it learnt during its training.
 4. Leave with **Ctrl+C twice**.
@@ -603,7 +604,8 @@ scoring rules)?
    ```
 
 2. Say hello (`Hello`, then Enter), and look at **the gauge**. With the Feurisson example, we
-   measured about 2,600 tokens, against about 2,300 in mode `bare`. **The difference is mostly
+   measured about 2,600 tokens, against about 1,700 for the same `Hello` in mode `bare` (in Part 2
+   you saw more: two questions and their answers were in the window). **The difference is mostly
    your system prompt**, read again at every message (`workshop A` also adds one short line: it
    says that the chatbot has no tools).
 3. Test the behaviour, one question at a time:
