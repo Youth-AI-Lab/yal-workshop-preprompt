@@ -11,8 +11,8 @@ Full page: [README.md](README.md). Setup and common problems: [SETUP.md](SETUP.m
 
 ## 1. Welcome (20 min)
 
-1. Open the Codespace: **https://codespaces.new/Youth-AI-Lab/yal-workshop-preprompt** → **Create codespace**.
-2. https://github.com/settings/codespaces → **Default idle timeout**: **120** minutes, save.
+1. First, https://github.com/settings/codespaces → **Default idle timeout**: **120** minutes, **Save**.
+2. Open the Codespace: **https://codespaces.new/Youth-AI-Lab/yal-workshop-preprompt** → **Create codespace**.
 3. Terminal 1: `workshop-login`, paste the key once, Enter → you see `Key OK`.
 4. Terminal 1: `workshop bare`. First time: keep the theme (Enter), **trust the folder**. `Hello`,
    look at the gauge. `Ctrl+C` twice.

@@ -12,6 +12,9 @@
 
 > 🎓 **Open your Codespace** (one per pair): 👉 **https://codespaces.new/Youth-AI-Lab/yal-workshop-preprompt**
 >
+> **Before you click**, if the idle timeout of this GitHub account is not set yet: do
+> [step 1 of SETUP.md](SETUP.md#step-1---let-the-codespace-wait-for-you) (1 minute).
+>
 > This link creates your own copy of this repository, in VS Code running in your browser. Nothing
 > to install. The detailed steps are in [Part 1](#part-1---welcome-20-min).
 
@@ -136,8 +139,9 @@ same for every pair). Each key has a spending limit.
 
 Follow [SETUP.md](SETUP.md#setup), steps 1 to 5. You will:
 
-1. open the Codespace from the link at the top of this page (about 1 to 2 minutes);
-2. let it wait for you during long pauses (idle timeout of 120 minutes);
+1. let the Codespace wait for you during long pauses (idle timeout of 120 minutes), before you
+   create it;
+2. open the Codespace from the link at the top of this page (about 1 to 2 minutes);
 3. save your key with `workshop-login`;
 4. have a first conversation with `workshop bare`, and see the gauge above the input box;
 5. open a second terminal.
