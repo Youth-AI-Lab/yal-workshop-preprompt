@@ -5,6 +5,7 @@
 - **Project:** Youth AI Lab (Erasmus+), with five partners: L.A.B. (Aix-en-Provence, France),
   UAB (Barcelona, Spain), Perlatecnica (Naples, Italy), Digitale Wolven (Antwerp, Belgium),
   CSC Vent des Îles (La Rochelle, France).
+- **The series:** [the five workshops](https://github.com/Youth-AI-Lab/yal-workshop-kit#the-series)
 - **Need help?**
   - Raise your hand and ask the facilitator.
   - If something breaks, don't panic: your files stay in the Codespace.
@@ -90,10 +91,10 @@ This workshop is about the first box.
 The series goes on, one piece of the chatbot at a time:
 
 - **Workshop 1** (this one): the instructions, and how to test a chatbot
-- **Workshop 2**: all the knowledge in the context, then a RAG: who picks the pieces?
-- **Workshop 3**: the model searches by itself, and skills to add a document you checked
-- **Workshop 4**: tools that act outside, such as today's fire danger level
-- **Workshop 5**: organise what it knows in a wiki, and pack the chatbot of your territory
+- [**Workshop 2**](https://github.com/Youth-AI-Lab/yal-workshop-rag): all the knowledge in the context, then a RAG: who picks the pieces?
+- [**Workshop 3**](https://github.com/Youth-AI-Lab/yal-workshop-search): the model searches by itself, and skills to add a document you checked
+- [**Workshop 4**](https://github.com/Youth-AI-Lab/yal-workshop-tools): tools that act outside, such as today's fire danger level
+- [**Workshop 5**](https://github.com/Youth-AI-Lab/yal-workshop-wiki): organise what it knows in a wiki, and pack the chatbot of your territory
 
 ### Before you start
 
@@ -745,6 +746,9 @@ Answer on the card of the facilitator, alone, in a few words:
   [OpenCode guide, five ways to pay for the model](https://github.com/Youth-AI-Lab/yal-opencode-guide#before-you-start-five-ways-to-pay-for-the-model).
 - **Build a chatbot for a group** with your instructions: the
   [Open WebUI guide](https://github.com/Youth-AI-Lab/yal-openwebui-guide).
+
+**Next:** [Workshop 2 - When knowledge overflows: everything in the context, then RAG](https://github.com/Youth-AI-Lab/yal-workshop-rag). Open its own Codespace from that page, and
+bring `my-work.zip`.
 
 ---
 

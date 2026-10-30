@@ -56,7 +56,7 @@ Full page: [README.md](README.md). Setup and common problems: [SETUP.md](SETUP.m
    address it prints (`Ctrl` + click, or **Ports** → 3000). **New Chat**, then choose your chatbot
    (its name + `chatbot`) in the message box, bottom right. Ask `Who are you?`, then questions 7
    and 1. Same behaviour as in mode A?
-2. `workshop-save` → right-click on `my-work.zip` → **Download**. Bring it to workshop 2.
+2. `workshop-save` → right-click on `my-work.zip` → **Download...**. Bring it to [workshop 2](https://github.com/Youth-AI-Lab/yal-workshop-rag).
 3. Exit card: three answers, alone.
 
 **Leave a conversation:** `Ctrl+C` twice. **Copy / paste in the terminal:** `Ctrl+Shift+C` /
