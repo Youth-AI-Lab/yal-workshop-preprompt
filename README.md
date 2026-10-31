@@ -186,7 +186,7 @@ anything you had already made in this Codespace.
 ### Step 3 - Start Open WebUI in the background
 
 At the end of the workshop, you will see your chatbot in Open WebUI, another chat tool. Its
-first start downloads about 4.6 GB: about 3 minutes in the Codespaces we measured. Start it now,
+first start downloads about 1.6 GB: about 3 minutes in the Codespaces we measured. Start it now,
 so that it is ready when you need it.
 
 1. In your second terminal, type:
