@@ -15,8 +15,9 @@
 > **Before you click**, if the idle timeout of this GitHub account is not set yet: do
 > [step 1 of SETUP.md](SETUP.md#step-1---let-the-codespace-wait-for-you) (1 minute).
 >
-> This link creates your own copy of this repository, in VS Code running in your browser. Nothing
-> to install. The detailed steps are in [Part 1](#part-1---welcome-20-min).
+> This link creates your own copy of this repository (a folder of files kept on GitHub), in VS Code
+> running in your browser. Nothing to install. The detailed steps are in
+> [Part 1](#part-1---welcome-20-min).
 
 > 📚 **The slides of the facilitator:** https://youth-ai-lab.github.io/yal-workshop/1/ (the same
 > words as this page). **The short version** of this page, on one page: [sheet.md](sheet.md). The
@@ -45,7 +46,8 @@ This workshop opens that box. Its question of the day is:
 > **What does the chatbot read before it answers?**
 
 It is the first step of the question that runs through the whole series: **what enters the
-model's context, when, and who decides?**
+model's context, when, and who decides?** A **model** is the program that writes the answers. Here
+it is Claude Sonnet, the same for every pair. A **chatbot** is a model plus what you add to it.
 
 The parts of the session are organised as a progression. It follows **Bloom's taxonomy**, a
 teaching model that describes levels of mastery of a skill, from the simplest (understanding a
@@ -79,8 +81,10 @@ tools you know.
 
 ### How this connects to WikiYouthBot
 
-In the WikiYouthBot activity, the chatbot is built in a tool with two boxes: *Instructions*
-and *Knowledge*. You can already do it today with Open WebUI, a chat tool that you start
+WikiYouthBot is the chatbot activity you will run with young people aged 12 to 15
+([the activity sheet](https://github.com/Youth-AI-Lab/deliverables/blob/master/Ideation_Sheets/YouthAiLab_Template_Explorations_Ideation_Sheet_WikiYouthBot.pdf)).
+In it, the chatbot is built in a tool with two boxes: *Instructions* and *Knowledge*. You can
+already do it today with Open WebUI, a chat tool that you start
 yourself: today in your Codespace, for you only (Part 5), and later for a group, by following
 the [Open WebUI guide](https://github.com/Youth-AI-Lab/yal-openwebui-guide).
 This workshop is about the first box.
@@ -95,7 +99,7 @@ This workshop is about the first box.
 The series goes on, one piece of the chatbot at a time:
 
 - **Workshop 1** (this one): the instructions, and how to test a chatbot
-- [**Workshop 2**](https://github.com/Youth-AI-Lab/yal-workshop-rag): all the knowledge in the context, then a RAG: who picks the pieces?
+- [**Workshop 2**](https://github.com/Youth-AI-Lab/yal-workshop-rag): all the knowledge in the context, then a search engine that picks pieces of documents (a RAG)
 - [**Workshop 3**](https://github.com/Youth-AI-Lab/yal-workshop-search): the model searches by itself, and skills to add a document you checked
 - [**Workshop 4**](https://github.com/Youth-AI-Lab/yal-workshop-tools): tools that act outside, such as today's fire danger level
 - [**Workshop 5**](https://github.com/Youth-AI-Lab/yal-workshop-wiki): organise what it knows in a wiki, and pack the chatbot of your territory
@@ -128,8 +132,8 @@ WebUI, which you use at the end and which takes a few minutes to start.
 
 ### Your environment
 
-You work in a GitHub Codespace: VS Code in your browser, on a computer of GitHub, with
-everything already installed. Each pair needs one free GitHub account. The facilitator gives each
+You work in a GitHub Codespace: a text editor (VS Code) in your browser, on a computer of GitHub,
+with everything already installed. Each pair needs one free GitHub account. The facilitator gives each
 pair an API key: a long password that lets your Codespace use the model (Claude Sonnet, the
 same for every pair). The facilitator caps what the keys can spend.
 
@@ -158,7 +162,8 @@ Key OK (Claude Code, Anthropic, model claude-sonnet-5-5). You can start: worksho
 > same `replay`, same files. Save your key with `workshop-login --engine opencode` instead. The
 > differences are explained in the
 > [OpenCode guide, Part 2](https://github.com/Youth-AI-Lab/yal-opencode-guide#part-2---what-opencode-does-compared-with-claude-code).
-> The judge of `score` needs an Anthropic key (`sk-ant-`): with an OpenRouter key, you score alone.
+> The judge of `score` (Part 3) needs an Anthropic key (`sk-ant-`). OpenCode also accepts an
+> OpenRouter key, to try other models: with it, you score alone.
 > Open WebUI (Step 3 and Part 5) needs an Anthropic key too: with an OpenRouter key, skip it, and
 > watch the screen of the facilitator at the closing.
 
@@ -222,14 +227,21 @@ point: every later column is compared with it.
 
 ### What you will discover
 
-- **The context** of a model: everything it reads before it answers. In mode `bare`, it is only
-  your question (plus the general instructions of the tool).
+- **A mode**: a way of starting the chatbot, which decides what enters its context. `bare` means
+  nothing added: no instructions and no documents of yours. `A` comes in Part 3, and `B` to `E` in
+  the next workshops.
+- **The context** of a model: everything it reads before it answers. In mode `bare`, it starts
+  with your question and the general instructions of the tool. The tool here is Claude Code: it
+  adds its own instructions, and you do not write them. The word *tool* also has another meaning:
+  the *tools* of a chatbot are what it can use itself, such as today's fire danger level (workshop 4).
 - **The scoring rules**: an answer gets 0, 1 or 2, and **an invented answer is worse than "I don't
   know"**.
 - **`replay`**: the command that asks each question in a new conversation, so that nothing
   carries over from one question to the next.
-- **The gauge**: how many tokens the model read for one answer. A **token** is the unit used to
-  measure text for a model: a piece of a word, on average 4 characters of English text.
+- **The gauge**: how many tokens are in the context right now. A **token** is the unit used to
+  measure text for a model: a piece of a word, on average 4 characters of English text. The context
+  has a maximum size, the **context window**: here, 200,000 tokens. Every message pays for
+  everything in the context.
 
 ### What the model alone reads
 
@@ -286,6 +298,11 @@ So the same "I don't know" can be worth **2** (question 7: the answer exists now
 | 11 | In a document you add | A document you add yourself (workshop 3) |
 | 12 | **Yours** | A precise fact about your territory, with its source (Step 5) |
 
+> ℹ️ **Note.** The sources in `test-questions.md`, such as `summaries/10` or `corpus/43`, are files
+> of the next workshops. They are not in this repository: they arrive in workshop 2. The
+> **summaries** are short texts in English about the official documents. Today, compare each answer
+> with the expected answer.
+
 ### What to do
 
 #### Step 1 - Predict
@@ -310,17 +327,22 @@ get right (score 2)? Which ones? You check your prediction in Step 4.
    …
    Question 11 (11/11)…
    Answers: answers/bare-14h05.md   (cost: $0.10, time: 1 min 42 s)
+   Next: score bare
    ```
 
    It takes about 2 minutes and costs about $0.10, as we measured. The time in the file name and
    the cost will be different for you.
 
+   The last line and the top of the answer file both say `score bare`. Do not type it today: in
+   this part, you score by hand (Step 4).
+
 2. **While it runs**, open the folder `answers/`: the file is written as the answers arrive. Press
-   `Ctrl+Shift+V` to read it as a page.
+   `Ctrl+Shift+V` to read it as a page. Does the first answer name a source?
 
 #### Step 3 - Talk to the model alone
 
-While the replay runs, open a conversation with the same model, to see it answer live.
+While the replay runs, open a conversation with the same model. `replay` gives you one answer to
+each question. In a conversation, you can ask more: here, where a figure comes from.
 
 1. Go to your second terminal. If `openwebui start` is still running there, open a third terminal
    with the `+` of the terminal panel. Type `workshop bare`, then ask question 1:
@@ -332,9 +354,11 @@ While the replay runs, open a conversation with the same model, to see it answer
 2. Then ask: `Where does this figure come from? Give me your source.` Does it give a document, a
    link, or nothing? Does it say that it cannot check?
 3. **Look at the gauge**: we measured about 1,600 tokens after question 1, and about 2,200 after
-   the question about the source. Most of them are the general
-   instructions of the tool: your question is only a few words. The model alone has no document
-   to read: it answers from what it learnt during its training.
+   the question about the source. Most of them are the general instructions of the tool: your
+   question is only a few words. The number went up because the whole conversation stays in the
+   context: your questions and the model's answers. That is how the model knows what "this figure"
+   means, and why `replay` starts a new conversation for each question. The model alone has no
+   document to read: it answers from what it learnt during its training.
 4. Leave with **Ctrl+C twice**.
 
 #### Step 4 - Score column Bare, by hand
@@ -344,7 +368,8 @@ a judge will help you.
 
 1. In the answer file, read each answer, then compare it with the expected answer in
    `test-questions.md`. Under each answer, a line `*Context: … tokens*` gives the size of the
-   context for that answer.
+   context for that answer. It is not the number of the gauge: compare it only with the same line
+   in your other answer files.
 2. **Agree** on 0, 1 or 2 in your pair.
 3. Open `scores.md` and type the score in the column **Bare**, between two `|`. For example, a
    score of 1 for question 1:
@@ -369,8 +394,9 @@ get a 2. Today, no mode has your page: "I don't know" is the honest answer.
 1. Read the section **Question 12: your territory** of `test-questions.md`.
 2. Find one official page of your territory (a prefecture, a region, a civil protection
    service, a park), and one precise fact in it that the kit does not give: a date, a number, a
-   rule. The **kit** is the set of documents, questions and commands that workshops 1 to 5 of
-   the series share; the section of `test-questions.md` links to the list of its summaries.
+   rule. This way, a 2 in workshop 3 comes from your page. The **kit** is the set of documents,
+   questions and commands that workshops 1 to 5 of the series share; the section of
+   `test-questions.md` links to the list of its summaries.
 3. Click `test-questions.md` in the file list: the page becomes text again (you cannot type in
    the page). Write
    the question and its expected answer, with the address of the page, in row 12. You may write
@@ -381,7 +407,8 @@ get a 2. Today, no mode has your page: "I don't know" is the honest answer.
    replay bare 12
    ```
 
-   It takes a few seconds. Score its answer in column **Bare** of `scores.md`.
+   It takes a few seconds. Its answer is in a new file: the line `Answers:` gives its name. Score
+   it in column **Bare** of `scores.md`.
 
 > ℹ️ **Note.** Only 5 minutes are planned for question 12. If you have not finished, write it at
 > the start of workshop 2, just after `workshop-start 2 --from my-work.zip`. Then type
@@ -474,6 +501,7 @@ The facilitator gives each pair one personality. Write its name on your paper.
 
    ```
    Answers: answers/A-liar-14h32.md   (cost: $0.11, time: 1 min 20 s)
+   Next: score answers/A-liar-14h32.md --blind
    ```
 
    We measured from under 1 minute to about 2 and a quarter minutes, and from $0.06 to $0.17
@@ -489,7 +517,7 @@ The facilitator gives each pair one personality. Write its name on your paper.
 judge shows its score: another model, smaller than the chatbot's, with the same rules as you.
 Scoring blind first means that the judge cannot influence you.
 
-1. Type, with the name of your answer file:
+1. Type the command of the line `Next:`. It already has the name of your answer file:
 
    ```bash
    score answers/A-liar-14h32.md --blind
@@ -506,6 +534,9 @@ Scoring blind first means that the judge cannot influence you.
    Judge: 2 out of 22 (11 question(s) scored)
    Disagreements: 3
    ```
+
+   **What to watch**: if your total is higher than the judge's, you may have believed an answer
+   that the judge did not. Look first at the questions where you gave more points.
 
    Your scores and the judge's go into `scores-personas.md`, not into `scores.md`: your own
    chatbot's columns stay clean.
@@ -525,7 +556,7 @@ your personality:
 | Personality | What to look for |
 |---|---|
 | Feurisson | No trick. Why does it say "I don't know" so often? Read its reason. |
-| Captain Certain | Names of bodies, orders and figures said with total confidence. Do they exist? |
+| Captain Certain | Names of organisations, official orders and figures said with total confidence. Do they exist? |
 | Grandpa Beaver | Is the real fact still in the story, right, and with its source? |
 | Doctor Proof | Each fact may be true, and the conclusion still wrong: a figure from another year, another territory, another scale. Look at question 2. |
 | Prudence | Refusals, even when the answer exists. Does it ever give a figure? |
@@ -552,13 +583,14 @@ The facilitator shows the table of the room. Three questions for the discussion:
 
 ### Think about it
 
-Feurisson has no document in mode A. In our test (before its last two rules were added), it got as
-many points as a bot that refuses everything. **How can that be?** What does a total not show?
-(Hint: read the answers of Feurisson and Prudence to question 1. Why does each one refuse? What
-will each one do when it has documents?)
+Feurisson has no document in mode A. In our test, it got as many points as a bot that refuses
+everything. **How can that be?** What does a total not show? (Hint: ask the pairs who had Feurisson
+and Prudence to read their answers to question 1. Why does each one refuse? What will each one do
+when it has documents?)
 
-> **You built** your eye for wrong answers. **Reused in** "I Heard a Rumor" and the "Press
-> Conference" of WikiYouthBot, and each time you test a chatbot before you give it to a group.
+> **You built** your eye for wrong answers: a confident tone is not a source. **Reused in** "I Heard
+> a Rumor" and the "Press Conference" of WikiYouthBot, and each time you test a chatbot before you
+> give it to a group.
 
 ---
 
@@ -613,6 +645,14 @@ scoring rules)?
 > ⚠️ **Important.** **Do not skip Rules and Quality requirements**: the next workshops are scored on
 > them.
 
+> ⚠️ **Important.** In **Bans and constraints**, copy the last two "Never" rules of the Feurisson
+> example, as the hint in `AGENTS.md` says. They protect young people: the chatbot asks for no
+> personal information, and it sends a young person who is unwell or in danger to an adult they
+> trust and to the emergency number.
+
+> ℹ️ **Note.** All the Feurisson figures of this page, in Parts 3 and 4, were measured before these
+> two rules were added to the example.
+
 #### Step 2 - Talk to it
 
 1. Type:
@@ -621,12 +661,16 @@ scoring rules)?
    workshop A
    ```
 
-2. Say hello (`Hello`, then Enter), and look at **the gauge**. With the Feurisson example, before
-   its last two rules were added, we measured about 2,600 tokens, against about 1,700 for the same
-   `Hello` in mode `bare` (in Part 2 you saw more: two questions and their answers were in the
-   window). **The difference is mostly
-   your system prompt**, read again at every message (`workshop A` also adds one short line: it
-   says that the chatbot has no tools).
+   > ⚠️ **Important.** The first time you type `workshop A`, Claude Code asks again whether you
+   > trust a folder. Press the down arrow to choose `Yes, I trust this folder`, then Enter. Enter
+   > alone closes Claude Code: if that happens, type `workshop A` again.
+
+2. Say hello (`Hello`, then Enter), and look at **the gauge**. For the same `Hello`, we measured
+   about 1,700 tokens in mode `bare`, and about 2,600 with the Feurisson example. Your number will
+   be different: it depends on what you wrote. **The difference is mostly your system prompt**,
+   read again at every message. `workshop A` also adds one short line, which says that the chatbot
+   has no tools. In Part 2 you saw more, because two questions and their answers were in the
+   context.
 3. Test the behaviour, one question at a time:
    - `Who are you?`
    - `What is the best insurance company for my house?` (question 9)
@@ -636,9 +680,9 @@ scoring rules)?
 4. Leave with **Ctrl+C twice**. If a rule is not followed, change `AGENTS.md`, save, and try again.
 
 > ℹ️ **Note.** In modes `bare` and `A`, the chatbot has no tools. But the general instructions of
-> the tool still describe a shell and tools to read files. In mode `A`, `workshop` adds one line
-> that says "You have no tools in this conversation". In mode `bare`, nothing says it: if you ask
-> it which tools it has, it may list them anyway. One more reason to check what a model says
+> Claude Code still describe tools to run commands and read files. In mode `A`, `workshop` adds one
+> line that says "You have no tools in this conversation". In mode `bare`, nothing says it: if you
+> ask it which tools it has, it may list them anyway. One more reason to check what a model says
 > about itself.
 
 #### Step 3 - Predict, replay, score
@@ -651,9 +695,9 @@ scoring rules)?
    replay A
    ```
 
-   With the Feurisson example, we measured 1 min 12 and $0.09 (11 questions, before its last two
-   rules were added).
-3. Score blind. `score` finds the latest answers of mode A by itself:
+   With the Feurisson example, we measured 1 min 12 and $0.09 (11 questions).
+3. Score blind. `score` finds the latest answers of mode A by itself. The line `Next:` says only
+   `score A`: add `--blind`.
 
    ```bash
    score A --blind
@@ -664,17 +708,18 @@ scoring rules)?
 4. **Compare columns Bare and A**, and your prediction.
 
 **What to watch**: the **behaviour** changes (tone, refusals, "I don't know", sources asked for).
-The **knowledge** does not: the precise questions (1 to 4) do not get better. With the Feurisson
-example, the judge gave 13 out of 22 on questions 1 to 11: almost only honest "I don't know". We
-measured it before question 12 existed, and before Feurisson got its last two rules. With yours,
-the total is out of 24.
+The **knowledge** does not: on the precise questions (1 to 4), your chatbot still has no document
+that gives the fact. A score may still go from 0 to 1: an invented answer became an honest "I don't
+know", which is a change of behaviour. With the Feurisson example, the judge gave 13 out of 22 on
+questions 1 to 11: almost only honest "I don't know". We measured it before question 12 existed.
+With yours, the total is out of 24.
 
 > 💡 **Tip.** **Checkpoint**: `AGENTS.md` has a text under each title, `workshop A` answers with
 > your chatbot's identity, and column A is scored.
 
 ### Think about it
 
-Even with a perfect system prompt, why do the precise questions (1 to 4) not improve? Discuss
+Even with a perfect system prompt, why do the precise questions (1 to 4) not reach a 2? Discuss
 it in your pair. (Hint: what is in `AGENTS.md`, and what is not?)
 
 > **You built** a system prompt. **Reused in** the *Instructions* box of WikiYouthBot; in the
@@ -723,12 +768,12 @@ In Open WebUI, your `AGENTS.md` becomes the instructions of a chatbot.
 **Key insight:** your system prompt **travels**: the same text becomes the instructions of a chatbot
 in another tool. The answers can still differ a little: each tool adds its own instructions
 around yours (here, Open WebUI adds a short paragraph about its knowledge base and lets the model
-search it). Its knowledge does not exist yet: this repository has no documents, so in Open WebUI too,
-your chatbot has nothing to answer question 1 with. Giving it knowledge, and choosing who picks
-the pieces it reads, is the topic of workshops 2 and 3.
+search it). Your chatbot's *Knowledge* box is still empty: this repository has no documents, so in
+Open WebUI too, your chatbot has nothing to answer question 1 with. Giving it knowledge, and
+choosing who picks the pieces it reads, is the topic of workshops 2 and 3.
 
-> ℹ️ **Note.** You also see a model called "Wildfire RAG (workshop kit)": it is for workshop 2, and
-> it has no documents yet. Choose your own chatbot.
+> ℹ️ **Note.** Open WebUI calls each chatbot a model. So you also see a model called "Wildfire RAG
+> (workshop kit)": it is for workshop 2, and it has no documents yet. Choose your own chatbot.
 
 ### Step 2 - Save your work
 
@@ -748,7 +793,7 @@ the pieces it reads, is the topic of workshops 2 and 3.
 
 ### Step 3 - Exit card
 
-Answer on the card of the facilitator, alone, in a few words:
+Take a blank card or a half sheet from the facilitator. This is your **exit card**. Answer alone, in a few words:
 
 1. What does the model read before it answers, in mode A?
 2. Name one thing a system prompt changed today, and one thing it could not change.

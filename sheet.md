@@ -44,11 +44,13 @@ Full page: [README.md](README.md). Setup and common problems: [SETUP.md](SETUP.m
 
 ## 4. Your system prompt (25 min)
 
-1. Fill in `AGENTS.md` under each title (example: `examples/AGENTS.feurisson.md`). Save.
-2. `workshop A`: `Hello`, look at the gauge and compare with bare; `Who are you?`; questions 7
-   and 9. `Ctrl+C` twice.
+1. Fill in `AGENTS.md` under each title (example: `examples/AGENTS.feurisson.md`). In **Bans and
+   constraints**, copy the last two "Never" rules of the example: they protect young people. Save.
+2. `workshop A` (first time: **trust the folder** again): `Hello`, look at the gauge and compare
+   with bare; `Who are you?`; questions 7 and 9. `Ctrl+C` twice.
 3. Predict: which questions go up from Bare to A?
-4. `replay A`, then `score A --blind`. Compare columns Bare and A.
+4. `replay A`, then `score A --blind` (the line `Next:` leaves out `--blind`). Compare columns Bare
+   and A.
 
 ## 5. Closing (10 min)
 
