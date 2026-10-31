@@ -552,8 +552,9 @@ The facilitator shows the table of the room. Three questions for the discussion:
 ### Think about it
 
 Feurisson has no document in mode A. In our test (before its last two rules were added), it got as
-many points as a bot that refuses everything. **How can that be?** What does a total not show? (Hint: read the answers of Feurisson and Prudence to
-question 1. Why does each one refuse? What will each one do when it has documents?)
+many points as a bot that refuses everything. **How can that be?** What does a total not show?
+(Hint: read the answers of Feurisson and Prudence to question 1. Why does each one refuse? What
+will each one do when it has documents?)
 
 > **You built** your eye for wrong answers. **Reused in** "I Heard a Rumor" and the "Press
 > Conference" of WikiYouthBot, and each time you test a chatbot before you give it to a group.
@@ -619,9 +620,10 @@ scoring rules)?
    workshop A
    ```
 
-2. Say hello (`Hello`, then Enter), and look at **the gauge**. With the Feurisson example (before its
-   last two rules were added), we measured about 2,600 tokens, against about 1,700 for the same `Hello` in mode `bare` (in Part 2
-   you saw more: two questions and their answers were in the window). **The difference is mostly
+2. Say hello (`Hello`, then Enter), and look at **the gauge**. With the Feurisson example, before
+   its last two rules were added, we measured about 2,600 tokens, against about 1,700 for the same
+   `Hello` in mode `bare` (in Part 2 you saw more: two questions and their answers were in the
+   window). **The difference is mostly
    your system prompt**, read again at every message (`workshop A` also adds one short line: it
    says that the chatbot has no tools).
 3. Test the behaviour, one question at a time:
@@ -662,8 +664,9 @@ scoring rules)?
 
 **What to watch**: the **behaviour** changes (tone, refusals, "I don't know", sources asked for).
 The **knowledge** does not: the precise questions (1 to 4) do not get better. With the Feurisson
-example, the judge gave 13 out of 22 on questions 1 to 11 (measured before question 12 existed
-and before its last two rules were added; with yours, the total is out of 24): almost only honest "I don't know".
+example, the judge gave 13 out of 22 on questions 1 to 11: almost only honest "I don't know". We
+measured it before question 12 existed, and before Feurisson got its last two rules. With yours,
+the total is out of 24.
 
 > 💡 **Tip.** **Checkpoint**: `AGENTS.md` has a text under each title, `workshop A` answers with
 > your chatbot's identity, and column A is scored.
