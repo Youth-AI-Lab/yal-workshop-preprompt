@@ -1,11 +1,11 @@
 # Workshop 1 - Instructions and knowledge
 
-### Youth AI Lab (Erasmus+) - series "Build your own chatbot", workshop 1 of 5
+### Youth AI Lab (Erasmus+) - series "Build your own chatbot", workshop 1 of 6
 
 - **Project:** Youth AI Lab (Erasmus+), with five partners: L.A.B. (Aix-en-Provence, France),
   UAB (Barcelona, Spain), Perlatecnica (Naples, Italy), Digitale Wolven (Antwerp, Belgium),
   CSC Vent des Îles (La Rochelle, France).
-- **The series:** [the five workshops](https://github.com/Youth-AI-Lab/yal-workshop-kit#the-series)
+- **The series:** [the six workshops](https://github.com/Youth-AI-Lab/yal-workshop-kit#the-series)
 - **Need help?**
   - Raise your hand and ask the facilitator.
   - If something breaks, don't panic: your files stay in the Codespace.
@@ -99,6 +99,7 @@ The series goes on, one piece of the chatbot at a time:
 - [**Workshop 3**](https://github.com/Youth-AI-Lab/yal-workshop-search): the model searches by itself, and skills to add a document you checked
 - [**Workshop 4**](https://github.com/Youth-AI-Lab/yal-workshop-tools): tools that act outside, such as today's fire danger level
 - [**Workshop 5**](https://github.com/Youth-AI-Lab/yal-workshop-wiki): organise what it knows in a wiki, and pack the chatbot of your territory
+- [**Workshop 6**](https://github.com/Youth-AI-Lab/yal-workshop-finetune): fine-tune a small model, to sort messages before the chatbot
 
 ### Before you start
 
@@ -368,7 +369,7 @@ get a 2. Today, no mode has your page: "I don't know" is the honest answer.
 1. Read the section **Question 12: your territory** of `test-questions.md`.
 2. Find one official page of your territory (a prefecture, a region, a civil protection
    service, a park), and one precise fact in it that the kit does not give: a date, a number, a
-   rule. The **kit** is the set of documents, questions and commands that the five workshops of
+   rule. The **kit** is the set of documents, questions and commands that workshops 1 to 5 of
    the series share; the section of `test-questions.md` links to the list of its summaries.
 3. Click `test-questions.md` in the file list: the page becomes text again (you cannot type in
    the page). Write
