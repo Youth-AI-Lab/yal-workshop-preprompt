@@ -241,7 +241,7 @@ point: every later column is compared with it.
 - **The gauge**: how many tokens are in the context right now. A **token** is the unit used to
   measure text for a model: a piece of a word, on average 4 characters of English text. The context
   has a maximum size, the **context window**: here, 200,000 tokens. Every message pays for
-  everything in the context.
+  everything in the context. To see real tokens: [What a token really is](https://github.com/Youth-AI-Lab/yal-local-ai-guide/blob/main/how-an-llm-works.md#what-a-token-really-is).
 
 ### What the model alone reads
 
@@ -473,7 +473,7 @@ how they are made.
 **Key insight:** the model, its knowledge and the questions are the same for the five chatbots.
 **Only a text changes.** So the big differences you see (a label, a refusal, an error that comes
 back every time) come from that text. Small differences in wording can also come from chance:
-the same chatbot does not write exactly the same answer twice.
+the same chatbot does not write exactly the same answer twice ([why](https://github.com/Youth-AI-Lab/yal-local-ai-guide/blob/main/how-an-llm-works.md#temperature)).
 
 > ⚠️ **Important.** **Do not open your file before you have scored.** Its name says a lot, its
 > content says everything. You open it at Step 4.
