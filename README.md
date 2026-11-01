@@ -836,8 +836,9 @@ Compare row 12 with row 11 of `test-questions.md`.
 **`Open WebUI is not running, or not ready yet.`** - Wait for the line `Open WebUI is ready` in the
 second terminal. If the Codespace stopped, type `openwebui start` again.
 
-**`! This repository is for workshop 1. Workshop 2 has its own repository…`** - You typed
-`workshop-start` with the number of another workshop. Here, type `workshop-start 1`. For the next
+**`This repository is for workshop 1. Workshop 2 has its own repository…`** - You typed
+`workshop-start` with the number of another workshop. Nothing was changed. Here, type
+`workshop-start 1`. For the next
 workshop, open its own Codespace link.
 
 ---
