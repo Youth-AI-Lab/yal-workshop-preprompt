@@ -647,9 +647,10 @@ scoring rules)?
 
 > ⚠️ **Important.** In **Bans and constraints**, copy the rules of the Feurisson example, from
 > "Never ask for personal information" to the end, as the hint in `AGENTS.md` says. They protect
-> young people: the chatbot asks for no personal information, it sends a young person who is unwell
-> or in danger to an adult they trust and to the emergency number, it says that it cannot warn
-> anyone, and it gives no dose or method that could hurt.
+> young people: the chatbot asks for no personal information. When a young person or someone else
+> is unwell or in danger, it sends them to an adult they trust and to the emergency number, and it
+> says that it cannot warn anyone. It gives no dose or method that could hurt, and if a question
+> shows an immediate risk to someone's body, it says not to do it and to go to an adult now.
 
 > ℹ️ **Note.** All the Feurisson figures of this page, in Parts 3 and 4, were measured before these
 > rules were added to the example.
