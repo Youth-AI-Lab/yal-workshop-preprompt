@@ -645,13 +645,14 @@ scoring rules)?
 > ⚠️ **Important.** **Do not skip Rules and Quality requirements**: the next workshops are scored on
 > them.
 
-> ⚠️ **Important.** In **Bans and constraints**, copy the last two "Never" rules of the Feurisson
-> example, as the hint in `AGENTS.md` says. They protect young people: the chatbot asks for no
-> personal information, and it sends a young person who is unwell or in danger to an adult they
-> trust and to the emergency number.
+> ⚠️ **Important.** In **Bans and constraints**, copy the rules of the Feurisson example, from
+> "Never ask for personal information" to the end, as the hint in `AGENTS.md` says. They protect
+> young people: the chatbot asks for no personal information, it sends a young person who is unwell
+> or in danger to an adult they trust and to the emergency number, it says that it cannot warn
+> anyone, and it gives no dose or method that could hurt.
 
 > ℹ️ **Note.** All the Feurisson figures of this page, in Parts 3 and 4, were measured before these
-> two rules were added to the example.
+> rules were added to the example.
 
 #### Step 2 - Talk to it
 
@@ -749,7 +750,7 @@ In Open WebUI, your `AGENTS.md` becomes the instructions of a chatbot.
    It takes a few seconds. You should see, at the end:
 
    ```
-   Instructions: your AGENTS.md, 32 lines. It starts with: "You are Feurisson, a friendly hedgehog who helps young people prevent…"
+   Instructions: your AGENTS.md, 39 lines. It starts with: "You are Feurisson, a friendly hedgehog who helps young people prevent…"
    Ready. In Open WebUI (https://…-3000.app.github.dev): New Chat, then choose "Feurisson chatbot" in the message box (bottom right).
    To check the instructions, ask it: Who are you?
    Ask it your test questions again, and compare with scores.md.

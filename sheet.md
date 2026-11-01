@@ -45,7 +45,8 @@ Full page: [README.md](README.md). Setup and common problems: [SETUP.md](SETUP.m
 ## 4. Your system prompt (25 min)
 
 1. Fill in `AGENTS.md` under each title (example: `examples/AGENTS.feurisson.md`). In **Bans and
-   constraints**, copy the last two "Never" rules of the example: they protect young people. Save.
+   constraints**, copy the rules of the example from "Never ask for personal information" to the
+   end: they protect young people. Save.
 2. `workshop A` (first time: **trust the folder** again): `Hello`, look at the gauge and compare
    with bare; `Who are you?`; questions 7 and 9. `Ctrl+C` twice.
 3. Predict: which questions go up from Bare to A?
