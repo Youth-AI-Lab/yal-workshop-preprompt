@@ -527,7 +527,7 @@ The facilitator gives each pair one personality. Write its name on your paper.
 #### Step 3 - Score blind, then see the judge
 
 `score` shows you each answer next to its expected answer. You type your score first. Then a
-judge shows its score: another model, smaller than the chatbot's, with the same rules as you.
+judge shows its score: a model that applies the same rules as you.
 Scoring blind first means that the judge cannot influence you.
 
 1. Type the command of the line `Next:`. It already has the name of your answer file:
