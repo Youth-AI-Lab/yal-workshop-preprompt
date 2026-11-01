@@ -162,10 +162,25 @@ Key OK (Claude Code, Anthropic, model claude-sonnet-5-5). You can start: worksho
 > same `replay`, same files. Save your key with `workshop-login --engine opencode` instead. The
 > differences are explained in the
 > [OpenCode guide, Part 2](https://github.com/Youth-AI-Lab/yal-opencode-guide#part-2---what-opencode-does-compared-with-claude-code).
-> The judge of `score` (Part 3) needs an Anthropic key (`sk-ant-`). OpenCode also accepts an
-> OpenRouter key, to try other models: with it, you score alone.
-> Open WebUI (Step 3 and Part 5) needs an Anthropic key too: with an OpenRouter key, skip it, and
-> watch the screen of the facilitator at the closing.
+
+> 💡 **If your key starts with `sk-or-`.** It is an OpenRouter key. OpenRouter is a service that
+> passes your question to a company that runs the model. Paste the key in `workshop-login`, with no
+> option: the key chooses OpenCode, and `score` and Open WebUI use OpenRouter too. `openwebui chatbot`,
+> and Open WebUI with the default model, DeepSeek V4 Flash: (not tested). You should see
+> `Key OK (OpenCode, OpenRouter, model openrouter/deepseek/deepseek-v4-flash). You can start: workshop bare`.
+> In a room, every pair keeps the same model. A pair with another key compares its own columns
+> only: `score` writes the model under the table, and warns when two columns used different
+> models. The chatbot figures of this page (cost, time, gauge, scores) were measured with Claude,
+> not with this model.
+
+> ⚠️ **Important.** **With young people and an OpenRouter key**, zero-data-retention models hosted in
+> Europe must be on. Zero data retention: the company says it stores nothing, and OpenRouter does not
+> guarantee it. Turn on the switches in your [privacy settings](https://openrouter.ai/settings/privacy)
+> and choose **Zero retention only** (not tested). Europe is not a switch: it needs a Business or
+> Enterprise plan, and the workshop commands cannot do it yet. No setting lifts OpenRouter's rule: "You
+> must be at least 18 years of age to use the Service." Read
+> [OpenRouter guide, Part 8](https://github.com/Youth-AI-Lab/yal-openrouter-guide#part-8---data-and-young-people)
+> before any session with young people.
 
 > ℹ️ **No Codespace?** The same repository opens on your own computer, with Docker and VS Code: see
 > the [dev containers guide](https://github.com/Youth-AI-Lab/yal-devcontainer-guide).
@@ -835,8 +850,8 @@ The common problems (key, Codespace, terminal) are in the
 **`score` asks for a file.** - Give the name of the answer file of your personality, as `replay`
 wrote it: `score answers/A-sophist-14h32.md --blind`. For your own chatbot: `score A --blind`.
 
-**`No judge with an OpenRouter key`** - The judge needs an Anthropic key. Score alone: type your
-score for each answer, as in Part 2.
+**`These columns used different models, so they cannot be compared: …`** - A key or a model changed
+between two columns. The line `Models:` under the table says which: compare one model at a time.
 
 **Question 12 does not appear in `replay`.** - Its question cell is empty, or a `|` is missing.
 Compare row 12 with row 11 of `test-questions.md`.
