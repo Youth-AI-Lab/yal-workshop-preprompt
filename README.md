@@ -714,7 +714,16 @@ The **knowledge** does not: on the precise questions (1 to 4), your chatbot stil
 that gives the fact. A score may still go from 0 to 1: an invented answer became an honest "I don't
 know", which is a change of behaviour. With the Feurisson example, the judge gave 13 out of 22 on
 questions 1 to 11: almost only honest "I don't know". We measured it before question 12 existed.
-With yours, the total is out of 24.
+
+**Where does 13 come from?** You can compute it before any test. A chatbot that says "I don't know"
+to everything gets 2 points on questions 7 and 9, and 1 point on the 9 others:
+
+2 × 2 + 9 × 1 = 13
+
+So 13 out of 22 is what honesty alone earns: that is why Feurisson and Prudence had the same total
+in our test. The next workshops add the documents and tools that can earn the **9 points left**.
+With your question 12, the total is out of 24, and an honest answer to it adds 1: 14. Below these
+totals, look for a wrong or invented answer.
 
 > 💡 **Tip.** **Checkpoint**: `AGENTS.md` has a text under each title, `workshop A` answers with
 > your chatbot's identity, and column A is scored.
