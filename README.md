@@ -1,4 +1,4 @@
-# Workshop 1 - Instructions and knowledge
+# Workshop 1 - Instructions, and how to test a chatbot
 
 ### Youth AI Lab (Erasmus+) - series "Build your own chatbot", workshop 1 of 6
 
@@ -87,7 +87,9 @@ In it, the chatbot is built in a tool with two boxes: *Instructions* and *Knowle
 already do it today with Open WebUI, a chat tool that you start
 yourself: today in your Codespace, for you only (Part 5), and later for a group, by following
 the [Open WebUI guide](https://github.com/Youth-AI-Lab/yal-openwebui-guide).
-This workshop is about the first box.
+This workshop is about the first box. **The chatbot you open in Open WebUI at the end is the piece
+you reuse with young people.** The Codespace is your workbench: it shows what happens behind the
+chatbot, and it stays with the adults.
 
 - **The five personalities** (Part 3) are "I Heard a Rumor" seen from inside the chatbot: how a
   chatbot can sound sure of itself and be wrong.
@@ -104,6 +106,22 @@ The series goes on, one piece of the chatbot at a time:
 - [**Workshop 4**](https://github.com/Youth-AI-Lab/yal-workshop-tools): tools that act outside, such as today's fire danger level
 - [**Workshop 5**](https://github.com/Youth-AI-Lab/yal-workshop-wiki): organise what it knows in a wiki, and pack the chatbot of your territory
 - [**Workshop 6**](https://github.com/Youth-AI-Lab/yal-workshop-finetune): fine-tune a small model, to sort messages before the chatbot
+
+Workshops 1 to 5 build one chatbot; workshop 6 goes further. Around them, standalone guides show
+other ways to do the same things. The workshops point to them when they help:
+
+- [**Open WebUI**](https://github.com/Youth-AI-Lab/yal-openwebui-guide): share your chatbot with a
+  group, during a session.
+- [**OpenCode**](https://github.com/Youth-AI-Lab/yal-opencode-guide): another program in place of
+  Claude Code, with other models.
+- [**Local AI**](https://github.com/Youth-AI-Lab/yal-local-ai-guide): a **local model**, which runs
+  on a computer of your organisation, so that the questions do not leave it.
+- [**Dev containers**](https://github.com/Youth-AI-Lab/yal-devcontainer-guide): this Codespace on
+  your own computer.
+- [**OpenRouter**](https://github.com/Youth-AI-Lab/yal-openrouter-guide): one account to pay for
+  many models, with keys for each pair.
+- [**Hermes**](https://github.com/Youth-AI-Lab/yal-hermes-guide): an assistant that helps you
+  prepare your sessions, for adults only.
 
 ### Before you start
 
@@ -698,7 +716,10 @@ scoring rules)?
 > Claude Code still describe tools to run commands and read files. In mode `A`, `workshop` adds one
 > line that says "You have no tools in this conversation". In mode `bare`, nothing says it: if you
 > ask it which tools it has, it may list them anyway. One more reason to check what a model says
-> about itself.
+> about itself. You may have seen this line at work in Part 3: Feurisson answers "I can't open the
+> documents… in this conversation". Its "I don't know" comes from its `AGENTS.md`, but the words
+> "in this conversation" come from the line that `workshop` adds. **Your text is not the only
+> thing that shapes the answer.**
 
 #### Step 3 - Predict, replay, score
 
@@ -759,9 +780,10 @@ it in your pair. (Hint: what is in `AGENTS.md`, and what is not?)
 **Goal**: see that your system prompt is not tied to this tool, save your work for workshop 2, and
 answer the exit card.
 
-### Step 1 - Your chatbot in another tool
+### Step 1 - Your chatbot in Open WebUI
 
-In Open WebUI, your `AGENTS.md` becomes the instructions of a chatbot.
+In Open WebUI, your `AGENTS.md` becomes the instructions of a chatbot. This is the piece you will
+reuse with young people: a chatbot in a chat tool, with your instructions.
 
 1. In your second terminal, check that Open WebUI is ready (Part 1, Step 3). Then type the
    command with the name of your chatbot, for example with Feurisson:

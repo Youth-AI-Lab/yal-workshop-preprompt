@@ -1,4 +1,4 @@
-# Workshop 1 - Instructions and knowledge (one page)
+# Workshop 1 - Instructions, and how to test a chatbot (one page)
 
 **Question of the day: what does the chatbot read before it answers?**
 Full page: [README.md](README.md). Setup and common problems: [SETUP.md](SETUP.md).
@@ -58,7 +58,7 @@ Full page: [README.md](README.md). Setup and common problems: [SETUP.md](SETUP.m
 1. Terminal 2: `openwebui chatbot --name "Feurisson"`, with the name of your chatbot. Open the
    address it prints (`Ctrl` + click, or **Ports** → 3000). **New Chat**, then choose your chatbot
    (its name + `chatbot`) in the message box, bottom right. Ask `Who are you?`, then questions 7
-   and 1. Same behaviour as in mode A?
+   and 1. Same behaviour as in mode A? **This chatbot is the piece you reuse with young people.**
 2. `workshop-save` → right-click on `my-work.zip` → **Download...**. Bring it to [workshop 2](https://github.com/Youth-AI-Lab/yal-workshop-rag).
 3. Exit card: three answers, alone (the questions: README, Part 5, Step 3).
 
