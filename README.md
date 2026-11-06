@@ -184,7 +184,11 @@ Key OK (Claude Code, Anthropic, model claude-sonnet-5-5). You can start: worksho
 > 💡 **If your key starts with `sk-or-`.** It is an OpenRouter key: paste it in `workshop-login`, with
 > no option, and read [SETUP.md, With an OpenRouter key](SETUP.md#with-an-openrouter-key). You should
 > see `Key OK (OpenCode, OpenRouter, model openrouter/deepseek/deepseek-v4-flash). You can start: workshop bare`.
-> Today, `openwebui chatbot`, and Open WebUI with the default model, DeepSeek V4 Flash: (not tested).
+> In mode bare, this model sometimes writes a tool call as text (`<｜DSML｜tool_calls>`) instead of an
+> answer: it is the model alone trying to use a search tool it does not have. It is not an answer, so
+> it cannot get 2. `openwebui chatbot` with this model was tried once on 2026-11-05, on a laptop and
+> not in a Codespace: the right tools on 4 questions, but one answer in French to a question asked in
+> English.
 > Before anything that young people wrote goes through OpenRouter, read
 > [Young people and OpenRouter](SETUP.md#young-people-and-openrouter).
 
