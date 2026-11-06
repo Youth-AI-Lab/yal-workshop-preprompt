@@ -27,10 +27,8 @@ Full page: [README.md](README.md). Setup and common problems: [SETUP.md](SETUP.m
 3. Terminal 1: `replay bare` → a file in `answers/`.
 4. While it runs, terminal 3 (`+`): `workshop bare`, ask question 1, then
    `Where does this figure come from? Give me your source.` Look at the gauge. `Ctrl+C` twice.
-5. Score each answer **by hand** in column **Bare** of `scores.md`. Save (`Ctrl+S`).
-6. Row 12 of `test-questions.md`: click the file in the file list to write in it (you cannot type
-   in the `Ctrl+Shift+V` page). One question about **your territory**, its answer, its source. Save.
-   Then `replay bare 12`, and score it. Not finished? At the start of workshop 2.
+5. Score each answer **by hand** in column **Bare** of `scores.md`: total out of 22. Save (`Ctrl+S`).
+   Row 12 stays empty: question 12, about your territory, comes in workshop 2.
 
 ## 3. Five personalities (35 min)
 
@@ -38,7 +36,8 @@ Full page: [README.md](README.md). Setup and common problems: [SETUP.md](SETUP.m
 2. `replay A --agents examples/AGENTS.liar.md`, with your personality instead of `liar`.
    At the end you see a line like `Answers: answers/A-liar-14h32.md`.
 3. `score answers/A-liar-14h32.md --blind`, with the file name of your `Answers:` line: your
-   score first, then the judge's.
+   score first, then the judge's. Without your score, nobody can tell when the judge is wrong:
+   talk about each disagreement.
 4. Open the file in `examples/`: find the trick. Write on the board: name, your total and the
    judge's total (with the "out of" that `score` prints), the trick in one sentence.
 

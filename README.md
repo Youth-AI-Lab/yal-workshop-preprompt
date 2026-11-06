@@ -67,7 +67,7 @@ after each change, and scored in the same way. It is a habit you can take home t
 
 Before changing a chatbot, we measure it. Without a fixed test, you only have impressions, and
 a chatbot can sound better while being wrong more often. So the session starts with a test set of
-12 questions, asked to the model alone. Every later change is measured against this first column.
+11 questions, asked to the model alone. Every later change is measured against this first column.
 
 Then, instead of writing instructions straight away, you look at five chatbots built on the
 same model with different instructions. Some of them make deliberate errors. Finding them, and
@@ -135,7 +135,7 @@ both learn the tools, and you can go on alone back home. More in
 All of these are in your Codespace, in the file list on the left:
 
 - `test-questions.md`: the 11 test questions, their expected answers, the scoring rules, and an
-  empty question 12 for your territory.
+  empty question 12 for your territory, which you write in workshop 2.
 - `scores.md`: your score sheet, one short line per question, one column per mode.
 - `AGENTS.md`: the system prompt of your chatbot, to complete in Part 4.
 - `examples/`: five system prompts for the same model (Part 3).
@@ -246,9 +246,8 @@ so that it is ready when you need it.
 
 ## Part 2 - The test set and the model alone (★, 20 min)
 
-**Goal**: ask the 11 questions of the test set to the model alone, score its answers by hand,
-and write a 12th question about your own territory. This first column, **Bare**, is the starting
-point: every later column is compared with it.
+**Goal**: ask the 11 questions of the test set to the model alone, and score its answers by hand.
+This first column, **Bare**, is the starting point: every later column is compared with it.
 
 ### What you will discover
 
@@ -306,8 +305,9 @@ So the same "I don't know" can be worth **2** (question 7: the answer exists now
 
    ![The file test-questions.md read as a page. 1: the label Markdown Preview, at the top right. 2: the button Reopen as source file, which also brings the text back.](images/preview-in-place.png)
 2. Open `scores.md`. It has one short line per question and one empty column per mode: `Bare`,
-   `A`, `B`, `C`, `D`, `E`. Today you fill **Bare** and **A**. The last row is the total: out of
-   24 with question 12, out of 22 while row 12 is empty.
+   `A`, `B`, `C`, `D`, `E`. Today you fill **Bare** and **A**. The last row, **Total /24**, is out
+   of 22 today: row 12 stays empty, because question 12, about your own territory, comes in
+   workshop 2.
 
 ### What each question tests
 
@@ -321,7 +321,7 @@ So the same "I don't know" can be worth **2** (question 7: the answer exists now
 | 9 | Out of scope | Insurance: the right answer is to refuse or reframe |
 | 10 | Two sources disagree | The chatbot must point out the contradiction, not choose |
 | 11 | In a document you add | A document you add yourself (workshop 3) |
-| 12 | **Yours** | A precise fact about your territory, with its source (Step 5) |
+| 12 | **Yours** | A precise fact about your territory, with its source (workshop 2) |
 
 > ℹ️ **Note.** The sources in `test-questions.md`, such as `summaries/10` or `corpus/43`, are files
 > of the next workshops. They are not in this repository: they arrive in workshop 2. The
@@ -410,37 +410,7 @@ a judge will help you.
 > an organisation or a website, with great confidence. If it is not in the expected answer, check
 > before you give a point: an invented answer gets 0.
 
-#### Step 5 - Write question 12, about your territory
-
-Question 12 is yours: a precise fact about forest fires where you work with young people. In
-workshop 3, you will add its source to the documents of your chatbot, and question 12 should then
-get a 2. Today, no mode has your page: "I don't know" is the honest answer.
-
-1. Read the section **Question 12: your territory** of `test-questions.md`.
-2. Find one official page of your territory (a prefecture, a region, a civil protection
-   service, a park), and one precise fact in it that the kit does not give: a date, a number, a
-   rule. This way, a 2 in workshop 3 comes from your page. The **kit** is the set of documents,
-   questions and commands that workshops 1 to 5 of the series share; the section of
-   `test-questions.md` links to the list of its summaries.
-3. Click `test-questions.md` in the file list: the page becomes text again (you cannot type in
-   the page). Write
-   the question and its expected answer, with the address of the page, in row 12. You may write
-   it in your own language. Save (`Ctrl+S`).
-4. Replay this question only, with the model alone:
-
-   ```bash
-   replay bare 12
-   ```
-
-   It takes a few seconds. Its answer is in a new file: the line `Answers:` gives its name. Score
-   it in column **Bare** of `scores.md`.
-
-> ℹ️ **Note.** Only 5 minutes are planned for question 12. If you have not finished, write it at
-> the start of workshop 2, just after `workshop-start 2 --from my-work.zip`. Then type
-> `replay bare 12` and `replay A 12`, and score both answers with `score bare 12` and `score A 12`.
-
-> 💡 **Tip.** **Checkpoint**: column Bare is scored, with its total, and row 12 of
-> `test-questions.md` has a question, an expected answer and a source.
+> 💡 **Tip.** **Checkpoint**: column Bare is scored, with its total.
 
 ### Think about it
 
@@ -540,7 +510,9 @@ The facilitator gives each pair one personality. Write its name on your paper.
 
 `score` shows you each answer next to its expected answer. You type your score first. Then a
 judge shows its score: a model that applies the same rules as you.
-Scoring blind first means that the judge cannot influence you.
+Scoring blind first means that the judge cannot influence you. And without a score made by a
+person, nobody can tell when the judge is wrong. So you score first, then you compare and look at
+each disagreement: this way, you check the judge too.
 
 1. Type the command of the line `Next:`. It already has the name of your answer file:
 
@@ -551,8 +523,7 @@ Scoring blind first means that the judge cannot influence you.
 2. For each question: read, agree in your pair, type `0`, `1` or `2`, then press Enter. The
    judge's score appears with one sentence of explanation. When you disagree, you see
    `Disagreement: talk about it.` Talk about it in your pair: who is right, and why?
-3. At the end, you see a summary like this one, measured with questions 1 to 11 (with your
-   question 12, you see `out of 24 (12 question(s) scored)`):
+3. At the end, you see a summary like this one, as we measured it:
 
    ```
    You: 4 out of 22 (11 question(s) scored)
@@ -589,11 +560,6 @@ your personality:
 Write on the board of the room: your personality, your total and the judge's total as `score`
 prints them (for example `4 out of 22`), the number of disagreements (the line `Disagreements:` of the
 summary), and the trick in one sentence.
-
-> ℹ️ **Note.** Question 12 is different for each pair. Compare two totals only when they are out of
-> the same number. To compare a total out of 24 with one out of 22, take off the scores of
-> question 12, yours and the judge's: they are in row 12 of `scores-personas.md`. Do not delete
-> anything in your files.
 
 #### Step 5 - Compare in the room
 
@@ -740,8 +706,8 @@ scoring rules)?
 **What to watch**: the **behaviour** changes (tone, refusals, "I don't know", sources asked for).
 The **knowledge** does not: on the precise questions (1 to 4), your chatbot still has no document
 that gives the fact. A score may still go from 0 to 1: an invented answer became an honest "I don't
-know", which is a change of behaviour. With the Feurisson example, the judge gave 13 out of 22 on
-questions 1 to 11: almost only honest "I don't know". We measured it before question 12 existed.
+know", which is a change of behaviour. With the Feurisson example, the judge gave 13 out of 22:
+almost only honest "I don't know".
 
 **Where does 13 come from?** You can compute it before any test. A chatbot that says "I don't know"
 to everything gets 2 points on questions 7 and 9, and 1 point on the 9 others:
@@ -750,8 +716,7 @@ to everything gets 2 points on questions 7 and 9, and 1 point on the 9 others:
 
 So 13 out of 22 is what honesty alone earns: that is why Feurisson and Prudence had the same total
 in our test. The next workshops add the documents and tools that can earn the **9 points left**.
-With your question 12, the total is out of 24, and an honest answer to it adds 1: 14. Below these
-totals, look for a wrong or invented answer.
+Below this total, look for a wrong or invented answer.
 
 > 💡 **Tip.** **Checkpoint**: `AGENTS.md` has a text under each title, `workshop A` answers with
 > your chatbot's identity, and column A is scored.
@@ -761,10 +726,11 @@ totals, look for a wrong or invented answer.
 Even with a perfect system prompt, why do the precise questions (1 to 4) not reach a 2? Discuss
 it in your pair. (Hint: what is in `AGENTS.md`, and what is not?)
 
-> **You built** a system prompt. **Reused in** the *Instructions* box of WikiYouthBot; in the
-> system prompt of an Open WebUI chatbot
-> ([Open WebUI guide, Step 2 - Write the instructions](https://github.com/Youth-AI-Lab/yal-openwebui-guide#step-2---write-the-instructions));
-> in the `AGENTS.md` of an OpenCode chatbot
+> **You built** a system prompt. **Reused in** your chatbot in Open WebUI, at the end of this
+> workshop ([Part 5, Step 1](#step-1---your-chatbot-in-open-webui)), and in the *Instructions* box
+> of WikiYouthBot; for a group, see the
+> [Open WebUI guide, Step 2 - Write the instructions](https://github.com/Youth-AI-Lab/yal-openwebui-guide#step-2---write-the-instructions).
+> Another way, without Claude Code: the `AGENTS.md` of an OpenCode chatbot
 > ([OpenCode guide, Part 3](https://github.com/Youth-AI-Lab/yal-opencode-guide#part-3---the-instructions-agentsmd)).
 
 ---
@@ -807,9 +773,12 @@ reuse with young people: a chatbot in a chat tool, with your instructions.
 
 **Key insight:** your system prompt **travels**: the same text becomes the instructions of a chatbot
 in another tool. The answers can still differ a little: each tool adds its own instructions
-around yours (here, Open WebUI adds a short paragraph about its knowledge base and lets the model
-search it). Your chatbot's *Knowledge* box is still empty: this repository has no documents, so in
-Open WebUI too, your chatbot has nothing to answer question 1 with. Giving it knowledge, and
+around yours. Here, the `openwebui chatbot` command adds a short paragraph, `## Your knowledge`,
+after your text: it tells the model to search its knowledge base and to say which file it used.
+It names the summaries, the wiki and the official documents of the next workshops. Open WebUI
+gives the model the tools to search. You can read the whole text in Open WebUI: **Workspace →
+Models**, click your chatbot, then open the line **Prompts**. Your chatbot's *Knowledge* box is still empty: this repository
+has no documents, so in Open WebUI too, your chatbot has nothing to answer question 1 with. Giving it knowledge, and
 choosing who picks the pieces it reads, is the topic of workshops 2 and 3.
 
 > ℹ️ **Note.** Open WebUI calls each chatbot a model. Here, your chatbot is the only one in the list.
@@ -823,7 +792,7 @@ choosing who picks the pieces it reads, is the topic of workshops 2 and 3.
    ```
 
    You should see `Saved … files in my-work.zip:`, then the list of your files: your `AGENTS.md`,
-   your question 12, your scores and your answers.
+   your scores and your answers.
 2. **Download it**: right-click on `my-work.zip` in the file list, then **Download...**.
 
    ![1: my-work.zip in the file list. 2: the item Download... of the menu that opens with a right-click.](images/download-zip.png)
@@ -865,9 +834,6 @@ wrote it: `score answers/A-sophist-14h32.md --blind`. For your own chatbot: `sco
 
 **`These columns used different models, so they cannot be compared: …`** - A key or a model changed
 between two columns. The line `Models:` under the table says which: compare one model at a time.
-
-**Question 12 does not appear in `replay`.** - Its question cell is empty, or a `|` is missing.
-Compare row 12 with row 11 of `test-questions.md`.
 
 **`openwebui chatbot` says `Warning: your AGENTS.md is still empty`.** - Fill in `AGENTS.md`
 (Part 4), save, and type the command again.
