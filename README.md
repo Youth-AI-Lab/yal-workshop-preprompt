@@ -229,7 +229,7 @@ so that it is ready when you need it.
 2. **Do not wait for it.** Go on with Part 2 in your first terminal. When it is done, the second terminal shows:
 
    ```
-   Open WebUI is ready, with the model "Wildfire RAG (workshop kit)".
+   Open WebUI is ready.
    Open it: https://…-3000.app.github.dev
    ```
 
@@ -812,8 +812,7 @@ search it). Your chatbot's *Knowledge* box is still empty: this repository has n
 Open WebUI too, your chatbot has nothing to answer question 1 with. Giving it knowledge, and
 choosing who picks the pieces it reads, is the topic of workshops 2 and 3.
 
-> ℹ️ **Note.** Open WebUI calls each chatbot a model. So you also see a model called "Wildfire RAG
-> (workshop kit)": it is for workshop 2, and it has no documents yet. Choose your own chatbot.
+> ℹ️ **Note.** Open WebUI calls each chatbot a model. Here, your chatbot is the only one in the list.
 
 ### Step 2 - Save your work
 
